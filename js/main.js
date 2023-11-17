@@ -28,12 +28,40 @@ itemsContainer.innerHTML += slideElement;
 
 let prev = document.querySelector('.prev');
 let next = document.querySelector('.next');
+let start = document.getElementById('start');
+let stop = document.getElementById('stop');
 
 
 const domSlides = document.querySelectorAll('.item');
 console.log(domSlides);
 
 // Aggiunta della classe active per next/prev + Bonus 1(ciclo infinito del carosello)
+
+next.addEventListener('click', function(){
+    domSlides[currentSlide].classList.remove('active');
+    
+    if (currentSlide === domSlides.length - 1){
+        currentSlide = 0;
+    }else{
+        currentSlide++;
+    }
+       
+    domSlides[currentSlide].classList.add('active');
+});
+
+prev.addEventListener('click', function(){
+    domSlides[currentSlide].classList.remove('active');
+    
+    if (currentSlide === domSlides.length - 1){
+        currentSlide = 0;
+    }else{
+        currentSlide++;
+    }
+       
+    domSlides[currentSlide].classList.add('active');
+});
+
+// Funzioni next/prev
 function nextFunction(){
     domSlides[currentSlide].classList.remove('active');
     
@@ -59,7 +87,19 @@ function prevFunction(){
 }
 
 // Funzione autoplay
-let autoplayFunction = setInterval(nextFunction, 3_000);
+// let autoplayFunction = setInterval(nextFunction, 3_000);
+
+// Bonus
+let autoplayFunction;
+start.addEventListener('click', function(){
+    console.log('start');
+    autoplayFunction =  setInterval(nextFunction, 3_000);
+});
+
+stop.addEventListener('click', function(){
+    console.log('stop');
+    clearInterval(autoplayFunction);
+})
    
 
 

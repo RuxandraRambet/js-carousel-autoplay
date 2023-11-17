@@ -34,7 +34,7 @@
     display: block;
 }
 
-/* .prev, .next {
+.prev, .next {
     width: 20px;
     height: 20px;
     margin: 10px 0;
@@ -46,7 +46,7 @@
     transform: translate(-50%);
     cursor: pointer;
     z-index: 999;
-} */
+}
 
 .next {
     bottom: 0;
@@ -78,4 +78,24 @@
     bottom: 35%;
     left: 50%;
     transform: translate(-50%) rotate(135deg);
+}
+
+/* BOTTONI BONUS */
+.buttons {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+#start,
+#stop {
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+#start {
+    margin-right: 10px;
+    background-color: rgb(223, 150, 174);
+}
+#stop {
+    background-color: rgb(120, 204, 120);
 }
