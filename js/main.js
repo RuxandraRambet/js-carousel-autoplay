@@ -26,37 +26,43 @@ itemsContainer.innerHTML += slideElement;
 // OPPURE
 // itemsContainer.innerHTML = slideElement + itemsContainer.innerHTML;
 
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
+let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
 
 
 const domSlides = document.querySelectorAll('.item');
 console.log(domSlides);
 
 // Aggiunta della classe active per next/prev + Bonus 1(ciclo infinito del carosello)
-next.addEventListener('click', function(){
+function nextFunction(){
     domSlides[currentSlide].classList.remove('active');
-
+    
     if (currentSlide === domSlides.length - 1){
         currentSlide = 0;
     }else{
         currentSlide++;
     }
-   
+       
     domSlides[currentSlide].classList.add('active');
-});
+}
 
-prev.addEventListener('click', function(){
+function prevFunction(){
     domSlides[currentSlide].classList.remove('active');
-
+    
     if (currentSlide === 0){
         currentSlide = domSlides.length - 1;
     }else{
         currentSlide--;
     }
-
+    
     domSlides[currentSlide].classList.add('active');
-});
+}
+
+// Funzione autoplay
+let autoplayFunction = setInterval(nextFunction, 3_000);
+   
+
+
 
 
 // Soluzione con creatElement e append
