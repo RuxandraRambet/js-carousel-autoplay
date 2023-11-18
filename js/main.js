@@ -37,29 +37,31 @@ console.log(domSlides);
 
 // Aggiunta della classe active per next/prev + Bonus 1(ciclo infinito del carosello)
 
-next.addEventListener('click', function(){
-    domSlides[currentSlide].classList.remove('active');
+// next.addEventListener('click', function(){
+//     domSlides[currentSlide].classList.remove('active');
     
-    if (currentSlide === domSlides.length - 1){
-        currentSlide = 0;
-    }else{
-        currentSlide++;
-    }
+//     if (currentSlide === domSlides.length - 1){
+//         currentSlide = 0;
+//     }else{
+//         currentSlide++;
+//     }
        
-    domSlides[currentSlide].classList.add('active');
-});
+//     domSlides[currentSlide].classList.add('active');
+// });
 
-prev.addEventListener('click', function(){
-    domSlides[currentSlide].classList.remove('active');
+// prev.addEventListener('click', function(){
+//     domSlides[currentSlide].classList.remove('active');
     
-    if (currentSlide === domSlides.length - 1){
-        currentSlide = 0;
-    }else{
-        currentSlide++;
-    }
+//     if (currentSlide === domSlides.length - 1){
+//         currentSlide = 0;
+//     }else{
+//         currentSlide++;
+//     }
        
-    domSlides[currentSlide].classList.add('active');
-});
+//     domSlides[currentSlide].classList.add('active');
+// });
+
+
 
 // Funzioni next/prev
 function nextFunction(){
@@ -85,6 +87,10 @@ function prevFunction(){
     
     domSlides[currentSlide].classList.add('active');
 }
+
+// Click su prev e next
+next.addEventListener('click', nextFunction);
+prev.addEventListener('click', prevFunction);
 
 // Funzione autoplay
 // let autoplayFunction = setInterval(nextFunction, 3_000);
